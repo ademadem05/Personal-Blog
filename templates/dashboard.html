@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+    <h2>Dashboard</h2>
+    <p><button><a href="{{ url_for('logout') }}">Logout</a></button></p>
+
+    <ul>
+        {% for article in articles %}
+            <li>{{article.title}} <small>{{article.date}}</small></li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
